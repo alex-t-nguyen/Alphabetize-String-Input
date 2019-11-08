@@ -1,0 +1,196 @@
+	.text
+main:	la $a0,string1	# load address of input string
+	li $v0,8	
+	syscall
+	li $t2,1	# counter
+	la $t9,string2	# load address of output string
+
+loop:	lb $t0,0($a0)	# load character to check
+	
+	beq $t2,27,done	# end program after for checking all letters
+	beqz $t0,nxtlet	# check for next letter after reaching end of string
+	blt $t0,0x61,remove	# skip character if not in alphabet
+	bgt $t0,0x7a,remove	
+
+	beq $t2,1,A	# check for a 
+	beq $t2,2,B	# check for b
+	beq $t2,3,C	# check for c
+	beq $t2,4,D	# check for d
+	beq $t2,5,E	# check for e
+	beq $t2,6,F	# check for f
+	beq $t2,7,G	# check for g
+	beq $t2,8,H	# check for h
+	beq $t2,9,I	# check for i
+	beq $t2,10,J	# check for j
+	beq $t2,11,K	# check for k
+	beq $t2,12,L	# check for l
+	beq $t2,13,M	# check for m
+	beq $t2,14,N	# check for n
+	beq $t2,15,O	# check for o
+	beq $t2,16,P	# check for p
+	beq $t2,17,Q	# check for q
+	beq $t2,18,R	# check for r
+	beq $t2,19,S	# check for s
+	beq $t2,20,T	# check for t
+	beq $t2,21,U	# check for u
+	beq $t2,22,V	# check for v
+	beq $t2,23,W	# check for w
+	beq $t2,24,X	# check for x
+	beq $t2,25,Y	# check for y
+	beq $t2,26,Z	# check for z
+
+A:	beq $t0,0x61,store	# add 'a' to output string
+	addi $a0,$a0,1
+	#beqz $t0,nxtlet
+	j loop
+
+B:	beq $t0,0x62,store	# add 'b' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+C:	beq $t0,0x63,store	# add 'c' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+D:	beq $t0,0x64,store	# add 'd' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+E:	beq $t0,0x65,store	# add 'e' to output string
+	addi $a0,$a0,1	
+	#beqz $a0,nxtlet
+	j loop
+
+F:	beq $t0,0x66,store	# add 'f' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+G:	beq $t0,0x67,store	# add 'g' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+H:	beq $t0,0x68,store	# add 'h' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+I:	beq $t0,0x69,store	# add 'i' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+J:	beq $t0,0x6a,store	# add 'j' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+K:	beq $t0,0x6b,store	# add 'k' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+L:	beq $t0,0x6c,store	# add 'l' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+M:	beq $t0,0x6d,store	# add 'm' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+N:	beq $t0,0x6e,store	# add 'n' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+O:	beq $t0,0x6f,store	# add 'o' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+P:	beq $t0,0x70,store	# add 'p' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+Q:	beq $t0,0x71,store	# add 'q' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+R:	beq $t0,0x72,store	# add 'r' to output string
+	addi $a0,$a0,1	
+	beqz $a0,nxtlet
+	j loop
+
+S:	beq $t0,0x73,store	# add 's' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+T:	beq $t0,0x74,store	# add 't' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+U:	beq $t0,0x75,store	# add 'u' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+V:	beq $t0,0x76,store	# add 'v' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+W:	beq $t0,0x77,store	# add 'w' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+X:	beq $t0,0x78,store	# add 'x' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+Y:	beq $t0,0x79,store	# add 'y' to output string
+	addi $a0,$a0,1
+	#beqz $a0,nxtlet
+	j loop
+
+Z:	beq $t0,0x7a,store	# add 'z' to output string
+	addi $a0,$a0,1
+	#beqz $a0,done
+	j loop
+
+done:	la $a0,answer	# print answer statement
+	li $v0,4
+	syscall
+	la $a0,string2	# print alphabetized string
+	li $v0,4
+	syscall
+	li $v0,10	# exit program
+	syscall
+
+nxtlet:	la $a0,string1	# move input string pointer back to beginning
+	addi $t2,$t2,1	# increment counter
+	j loop
+
+remove:	addi $a0,$a0,1	# skip character and go to next character
+	j loop
+
+store:	sb $t0,0($t9)	# store letter in output string
+	addi $t9,$t9,1	# increment output string pointer
+	addi $a0,$a0,1	# increment input string pointer
+	j loop
+	
+	.data
+string1:.space 30
+string2:.space 20
+answer:	.asciiz "The alphabetized string is: "
