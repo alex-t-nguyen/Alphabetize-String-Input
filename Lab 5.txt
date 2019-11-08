@@ -2,7 +2,7 @@
 main:	la $a0,string1	# load address of input string
 	li $v0,8	
 	syscall
-	li $t2,1	# counter
+	li $t2,1	# alphabet counter
 	la $t9,string2	# load address of output string
 
 loop:	lb $t0,0($a0)	# load character to check
